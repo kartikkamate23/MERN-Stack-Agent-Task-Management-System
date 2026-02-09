@@ -1,65 +1,59 @@
-Machine Test – MERN Stack Developer
-📖 Project Overview
+MERN Stack Agent Task Management System
 
-This project is a MERN stack backend application developed as part of a Machine Test.
-It includes Admin Authentication, Agent Management, CSV Upload, and Equal Task Distribution among agents.
+A full-stack MERN application built to manage agents, securely authenticate admins, upload CSV files, and automatically distribute tasks equally among agents.
+This project demonstrates real-world backend logic, secure authentication, file handling, and frontend-backend integration.
 
-The backend is built using Node.js, Express.js, MongoDB, and supports JWT-based authentication.
+🚀 Key Features
 
-🚀 Features Implemented
-🔐 1. Admin Login
+🔐 Admin Authentication
 
-Admin login using Email & Password
+Secure login using email & password
 
-Passwords stored securely using bcrypt
+Password hashing with bcrypt
 
-JWT authentication for secure access
+JWT-based authentication
 
-Proper success & error responses
+👤 Agent Management
 
-👤 2. Agent Creation & Management
+Create and manage agents
 
-Add new agents with:
+Unique email validation
 
-Name
+Secure password storage
 
-Email (unique)
+📂 CSV Upload & Processing
 
-Mobile number with country code
+Upload CSV files containing task data
 
-Password (hashed)
+Server-side validation and parsing
 
-Validation for required fields
+Handles real-world file upload scenarios
 
-Duplicate agent prevention
+🔄 Automated Task Distribution
 
-Agents stored in MongoDB
+Evenly distributes tasks among 5 agents
 
-📂 3. CSV Upload & Task Distribution
+Sequential allocation for extra tasks
 
-Upload CSV file containing:
+Implements business logic and algorithms
 
-FirstName
+🗂️ Database Integration
 
-Phone
+MongoDB used for storing users, agents, and tasks
 
-Notes
+Structured schema design with Mongoose
 
-CSV file processed using multer & csv-parser
+⚛️ React Frontend (Bonus)
 
-Tasks distributed equally among 5 agents
+Animated and modern UI
 
-Sequential (round-robin) distribution logic
+Admin dashboard
 
-Distributed tasks stored in MongoDB
-
-📋 4. Agent-wise Task Fetch
-
-API to fetch tasks assigned to a specific agent
-
-Uses agentId to retrieve agent-specific tasks
+API-integrated forms
 
 🛠️ Tech Stack
+
+Frontend: React.js
 
 Backend: Node.js, Express.js
 
@@ -67,112 +61,14 @@ Database: MongoDB
 
 Authentication: JWT, bcrypt
 
-File Upload: Multer
+File Handling: Multer, CSV parsing
 
-CSV Parsing: csv-parser
+Tools: VS Code, MongoDB Compass
 
-Testing: PowerShell / curl / Postman
+🎯 Why This Project?
 
-📁 Project Structure
-backend/
-│── controllers/
-│   ├── agentController.js
-│   ├── authController.js
-│   ├── uploadController.js
-│   └── taskController.js
-│
-│── models/
-│   ├── Agent.js
-│   ├── User.js
-│   └── Task.js
-│
-│── routes/
-│   ├── agentRoutes.js
-│   ├── authRoutes.js
-│   ├── uploadRoutes.js
-│   └── taskRoutes.js
-│
-│── uploads/
-│── server.js
-│── .env
-│── package.json
+This project covers end-to-end MERN development, including authentication, API design, database modeling, business logic implementation, and frontend integration—making it a strong demonstration of practical MERN stack skills.
 
-⚙️ Environment Variables
+📌 Use Case
 
-Create a .env file inside the backend folder:
-
-MONGO_URI=mongodb://localhost:27017/agentTask
-JWT_SECRET=your_jwt_secret_key
-
-▶️ How to Run the Application
-1️⃣ Install Dependencies
-npm install
-
-2️⃣ Start MongoDB
-
-Make sure MongoDB is running locally:
-
-mongod
-
-3️⃣ Start Backend Server
-node server.js
-
-
-Server will start at:
-
-http://localhost:5000
-
-🧪 API Endpoints
-🔐 Admin Login
-POST /api/auth/login
-
-👤 Add Agent
-POST /api/agents/add
-
-📂 Upload CSV
-POST /api/upload/csv
-
-📋 Get Tasks by Agent
-GET /api/tasks/:agentId
-
-🧪 Sample PowerShell Commands
-Add Agent
-curl.exe -X POST http://localhost:5000/api/agents/add `
--H "Content-Type: application/json" `
--d '{"name":"Agent One","email":"agent1@test.com","mobile":"+919999999999","password":"agent123"}'
-
-Upload CSV
-curl.exe -X POST http://localhost:5000/api/upload/csv -F "file=@data.csv"
-
-Fetch Agent Tasks
-curl.exe http://localhost:5000/api/tasks/AGENT_ID
-
-🎥 Demo Video
-
-A working video demonstration of the application is recorded and hosted on Google Drive, showing:
-
-Admin Login
-
-Agent Creation
-
-CSV Upload
-
-Task Distribution
-
-MongoDB Data Verification
-
-📎 Demo Video Link: (To be added)
-
-✅ Evaluation Checklist
-
-✔ Functional backend APIs
-
-✔ Clean and modular code
-
-✔ Proper validation & error handling
-
-✔ Secure authentication
-
-✔ Easy setup and execution
-
-🏁 Conclusion : This project fulfills all backend requirements of the Machine Test and demonstrates real-world backend development practices including authentication, file handling, database operations, and task distribution logic.
+Designed as a machine test / assignment project, but structured using production-level best practices suitable for real-world applications.
